@@ -1,6 +1,11 @@
+import requests
+
 def main():
-    print("Hello from example!")
+    resp = requests.get("https://peps.python.org/api/peps.json")
+    data = resp.json()
+    print(data)
 
 
 if __name__ == "__main__":
     main()
+
