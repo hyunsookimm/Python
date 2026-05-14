@@ -1,9 +1,7 @@
-import requests
-
+import uvicorn
+from config import config
 def main():
-    resp = requests.get("https://peps.python.org/api/peps.json")
-    data = resp.json()
-    print(data)
+    uvicorn.run(app="app:app", host="127.0.0.1", port=config.PORT, reload=True)
 
 
 if __name__ == "__main__":
